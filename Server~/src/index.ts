@@ -25,6 +25,22 @@ import { registerTransformTools } from './tools/transformTools.js';
 import { registerCreateMaterialTool, registerAssignMaterialTool, registerModifyMaterialTool, registerGetMaterialInfoTool } from './tools/materialTools.js';
 import { registerDuplicateGameObjectTool, registerDeleteGameObjectTool, registerReparentGameObjectTool } from './tools/gameObjectTools.js';
 import { registerBatchExecuteTool } from './tools/batchExecuteTool.js';
+import { registerCreateGameObjectTool } from './tools/createGameObjectTool.js';
+import { registerDescribeSceneTool } from './tools/describeSceneTool.js';
+import { registerExplainSceneTool } from './tools/explainSceneTool.js';
+import { registerCreateScriptTool } from './tools/createScriptTool.js';
+import { registerReadScriptTool } from './tools/readScriptTool.js';
+import { registerEditScriptTool } from './tools/editScriptTool.js';
+import { registerSaveCheckpointTool } from './tools/saveCheckpointTool.js';
+import { registerListCheckpointsTool } from './tools/listCheckpointsTool.js';
+import { registerLoadCheckpointTool } from './tools/loadCheckpointTool.js';
+import { registerImportAssetTool } from './tools/importAssetTool.js';
+import { registerScreenshotTool } from './tools/screenshotTool.js';
+import { registerEnterPlayModeTool } from './tools/enterPlayModeTool.js';
+import { registerExitPlayModeTool } from './tools/exitPlayModeTool.js';
+import { registerFocusGameObjectTool } from './tools/focusGameObjectTool.js';
+import { registerBuildProjectTool } from './tools/buildProjectTool.js';
+import { registerCreateAnimationTool } from './tools/createAnimationTool.js';
 import { registerGetMenuItemsResource } from './resources/getMenuItemResource.js';
 import { registerGetConsoleLogsResource } from './resources/getConsoleLogsResource.js';
 import { registerGetHierarchyResource } from './resources/getScenesHierarchyResource.js';
@@ -87,6 +103,24 @@ registerCreateMaterialTool(server, mcpUnity, toolLogger);
 registerAssignMaterialTool(server, mcpUnity, toolLogger);
 registerModifyMaterialTool(server, mcpUnity, toolLogger);
 registerGetMaterialInfoTool(server, mcpUnity, toolLogger);
+
+// Register Kiln Tools
+registerCreateGameObjectTool(server, mcpUnity, toolLogger);
+registerDescribeSceneTool(server, mcpUnity, toolLogger);
+registerExplainSceneTool(server, mcpUnity, toolLogger);
+registerCreateScriptTool(server, mcpUnity, toolLogger);
+registerReadScriptTool(server, mcpUnity, toolLogger);
+registerEditScriptTool(server, mcpUnity, toolLogger);
+registerSaveCheckpointTool(server, mcpUnity, toolLogger);
+registerListCheckpointsTool(server, mcpUnity, toolLogger);
+registerLoadCheckpointTool(server, mcpUnity, toolLogger);
+registerImportAssetTool(server, mcpUnity, toolLogger);
+registerScreenshotTool(server, mcpUnity, toolLogger);
+registerEnterPlayModeTool(server, mcpUnity, toolLogger);
+registerExitPlayModeTool(server, mcpUnity, toolLogger);
+registerFocusGameObjectTool(server, mcpUnity, toolLogger);
+registerBuildProjectTool(server, mcpUnity, toolLogger);
+registerCreateAnimationTool(server, mcpUnity, toolLogger);
 
 // Register Batch Execute Tool (high-priority for performance)
 registerBatchExecuteTool(server, mcpUnity, toolLogger);

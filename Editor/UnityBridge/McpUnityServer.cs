@@ -414,6 +414,55 @@ namespace McpUnity.Unity
             GetMaterialInfoTool getMaterialInfoTool = new GetMaterialInfoTool();
             _tools.Add(getMaterialInfoTool.Name, getMaterialInfoTool);
 
+            // Register Kiln Tools
+            CreateGameObjectTool createGameObjectTool = new CreateGameObjectTool();
+            _tools.Add(createGameObjectTool.Name, createGameObjectTool);
+
+            DescribeSceneTool describeSceneTool = new DescribeSceneTool();
+            _tools.Add(describeSceneTool.Name, describeSceneTool);
+
+            ExplainSceneTool explainSceneTool = new ExplainSceneTool();
+            _tools.Add(explainSceneTool.Name, explainSceneTool);
+
+            CreateScriptTool createScriptTool = new CreateScriptTool();
+            _tools.Add(createScriptTool.Name, createScriptTool);
+
+            ReadScriptTool readScriptTool = new ReadScriptTool();
+            _tools.Add(readScriptTool.Name, readScriptTool);
+
+            EditScriptTool editScriptTool = new EditScriptTool();
+            _tools.Add(editScriptTool.Name, editScriptTool);
+
+            SaveCheckpointTool saveCheckpointTool = new SaveCheckpointTool();
+            _tools.Add(saveCheckpointTool.Name, saveCheckpointTool);
+
+            ListCheckpointsTool listCheckpointsTool = new ListCheckpointsTool();
+            _tools.Add(listCheckpointsTool.Name, listCheckpointsTool);
+
+            LoadCheckpointTool loadCheckpointTool = new LoadCheckpointTool();
+            _tools.Add(loadCheckpointTool.Name, loadCheckpointTool);
+
+            ImportAssetTool importAssetTool = new ImportAssetTool();
+            _tools.Add(importAssetTool.Name, importAssetTool);
+
+            ScreenshotTool screenshotTool = new ScreenshotTool();
+            _tools.Add(screenshotTool.Name, screenshotTool);
+
+            EnterPlayModeTool enterPlayModeTool = new EnterPlayModeTool();
+            _tools.Add(enterPlayModeTool.Name, enterPlayModeTool);
+
+            ExitPlayModeTool exitPlayModeTool = new ExitPlayModeTool();
+            _tools.Add(exitPlayModeTool.Name, exitPlayModeTool);
+
+            FocusGameObjectTool focusGameObjectTool = new FocusGameObjectTool();
+            _tools.Add(focusGameObjectTool.Name, focusGameObjectTool);
+
+            BuildProjectTool buildProjectTool = new BuildProjectTool();
+            _tools.Add(buildProjectTool.Name, buildProjectTool);
+
+            CreateAnimationTool createAnimationTool = new CreateAnimationTool();
+            _tools.Add(createAnimationTool.Name, createAnimationTool);
+
             // Register BatchExecuteTool (must be registered last as it needs access to other tools)
             BatchExecuteTool batchExecuteTool = new BatchExecuteTool(this);
             _tools.Add(batchExecuteTool.Name, batchExecuteTool);
