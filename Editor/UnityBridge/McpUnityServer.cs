@@ -463,6 +463,27 @@ namespace McpUnity.Unity
             CreateAnimationTool createAnimationTool = new CreateAnimationTool();
             _tools.Add(createAnimationTool.Name, createAnimationTool);
 
+            UndoTool undoTool = new UndoTool();
+            _tools.Add(undoTool.Name, undoTool);
+
+            RedoTool redoTool = new RedoTool();
+            _tools.Add(redoTool.Name, redoTool);
+
+            DeleteAssetTool deleteAssetTool = new DeleteAssetTool();
+            _tools.Add(deleteAssetTool.Name, deleteAssetTool);
+
+            DeleteScriptTool deleteScriptTool = new DeleteScriptTool();
+            _tools.Add(deleteScriptTool.Name, deleteScriptTool);
+
+            DeleteCheckpointTool deleteCheckpointTool = new DeleteCheckpointTool();
+            _tools.Add(deleteCheckpointTool.Name, deleteCheckpointTool);
+
+            RemoveComponentTool removeComponentTool = new RemoveComponentTool();
+            _tools.Add(removeComponentTool.Name, removeComponentTool);
+
+            FindGameObjectsTool findGameObjectsTool = new FindGameObjectsTool();
+            _tools.Add(findGameObjectsTool.Name, findGameObjectsTool);
+
             // Register BatchExecuteTool (must be registered last as it needs access to other tools)
             BatchExecuteTool batchExecuteTool = new BatchExecuteTool(this);
             _tools.Add(batchExecuteTool.Name, batchExecuteTool);

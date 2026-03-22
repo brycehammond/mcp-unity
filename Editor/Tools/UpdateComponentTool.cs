@@ -189,54 +189,7 @@ namespace McpUnity.Tools
         /// <returns>The component type, or null if not found</returns>
         private Type FindComponentType(string componentName)
         {
-            // First try direct match
-            Type type = Type.GetType(componentName);
-            if (type != null && typeof(Component).IsAssignableFrom(type))
-            {
-                return type;
-            }
-            
-            // Try common Unity namespaces
-            string[] commonNamespaces = new string[] 
-            {
-                "UnityEngine",
-                "UnityEngine.UI",
-                "UnityEngine.EventSystems",
-                "UnityEngine.Animations",
-                "UnityEngine.Rendering",
-                "TMPro"
-            };
-            
-            foreach (string ns in commonNamespaces)
-            {
-                type = Type.GetType($"{ns}.{componentName}, UnityEngine");
-                if (type != null && typeof(Component).IsAssignableFrom(type))
-                {
-                    return type;
-                }
-            }
-            
-            // Try assemblies search
-            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                try
-                {
-                    foreach (Type t in assembly.GetTypes())
-                    {
-                        if (t.Name == componentName && typeof(Component).IsAssignableFrom(t))
-                        {
-                            return t;
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                    // Some assemblies might throw exceptions when getting types
-                    continue;
-                }
-            }
-            
-            return null;
+            return GameObjectToolUtils.FindComponentType(componentName);
         }
         
         /// <summary>

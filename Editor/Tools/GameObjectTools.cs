@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using UnityEngine;
 using UnityEditor;
 using McpUnity.Unity;
@@ -109,6 +110,53 @@ namespace McpUnity.Tools
                 path = "/" + obj.name + path;
             }
             return path;
+        }
+
+        /// <summary>
+        /// Find a component type by name, searching common Unity namespaces and all loaded assemblies.
+        /// </summary>
+        public static Type FindComponentType(string componentName)
+        {
+            // Direct match
+            Type type = Type.GetType(componentName);
+            if (type != null && typeof(Component).IsAssignableFrom(type))
+                return type;
+
+            // Common Unity namespaces
+            string[] namespaces = {
+                "UnityEngine",
+                "UnityEngine.UI",
+                "UnityEngine.EventSystems",
+                "UnityEngine.Animations",
+                "UnityEngine.Rendering",
+                "TMPro"
+            };
+
+            foreach (string ns in namespaces)
+            {
+                type = Type.GetType($"{ns}.{componentName}, UnityEngine");
+                if (type != null && typeof(Component).IsAssignableFrom(type))
+                    return type;
+            }
+
+            // Assembly-wide search
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                try
+                {
+                    foreach (Type t in assembly.GetTypes())
+                    {
+                        if (t.Name == componentName && typeof(Component).IsAssignableFrom(t))
+                            return t;
+                    }
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+            }
+
+            return null;
         }
     }
 

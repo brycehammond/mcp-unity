@@ -41,6 +41,13 @@ import { registerExitPlayModeTool } from './tools/exitPlayModeTool.js';
 import { registerFocusGameObjectTool } from './tools/focusGameObjectTool.js';
 import { registerBuildProjectTool } from './tools/buildProjectTool.js';
 import { registerCreateAnimationTool } from './tools/createAnimationTool.js';
+import { registerUndoTool } from './tools/undoTool.js';
+import { registerRedoTool } from './tools/redoTool.js';
+import { registerDeleteAssetTool } from './tools/deleteAssetTool.js';
+import { registerDeleteScriptTool } from './tools/deleteScriptTool.js';
+import { registerDeleteCheckpointTool } from './tools/deleteCheckpointTool.js';
+import { registerRemoveComponentTool } from './tools/removeComponentTool.js';
+import { registerFindGameObjectsTool } from './tools/findGameObjectsTool.js';
 import { registerGetMenuItemsResource } from './resources/getMenuItemResource.js';
 import { registerGetConsoleLogsResource } from './resources/getConsoleLogsResource.js';
 import { registerGetHierarchyResource } from './resources/getScenesHierarchyResource.js';
@@ -121,6 +128,13 @@ registerExitPlayModeTool(server, mcpUnity, toolLogger);
 registerFocusGameObjectTool(server, mcpUnity, toolLogger);
 registerBuildProjectTool(server, mcpUnity, toolLogger);
 registerCreateAnimationTool(server, mcpUnity, toolLogger);
+registerUndoTool(server, mcpUnity, toolLogger);
+registerRedoTool(server, mcpUnity, toolLogger);
+registerDeleteAssetTool(server, mcpUnity, toolLogger);
+registerDeleteScriptTool(server, mcpUnity, toolLogger);
+registerDeleteCheckpointTool(server, mcpUnity, toolLogger);
+registerRemoveComponentTool(server, mcpUnity, toolLogger);
+registerFindGameObjectsTool(server, mcpUnity, toolLogger);
 
 // Register Batch Execute Tool (high-priority for performance)
 registerBatchExecuteTool(server, mcpUnity, toolLogger);

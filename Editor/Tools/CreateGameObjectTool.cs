@@ -173,25 +173,7 @@ namespace McpUnity.Tools
 
         private static Type FindComponentType(string typeName)
         {
-            var type = Type.GetType($"UnityEngine.{typeName}, UnityEngine");
-            if (type != null) return type;
-
-            type = Type.GetType($"UnityEngine.UI.{typeName}, UnityEngine.UI");
-            if (type != null) return type;
-
-            type = Type.GetType(typeName);
-            if (type != null) return type;
-
-            foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                type = asm.GetType(typeName);
-                if (type != null) return type;
-
-                type = asm.GetType($"UnityEngine.{typeName}");
-                if (type != null) return type;
-            }
-
-            return null;
+            return GameObjectToolUtils.FindComponentType(typeName);
         }
     }
 }
